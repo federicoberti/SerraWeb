@@ -1,5 +1,6 @@
 package TestServerSpark.TestServerSpark;
-import static spark.Spark.*;
+
+import ServerConfiguration.ServerConfiguration;
 
 /**
  * Hello world!
@@ -9,9 +10,8 @@ public class App
 {
     public static void main( String[] args )
     {
-    		RestAPI rs = new RestAPI();
-    		rs.start();
-    		get("/hello", (req, res) -> "Hello World");
+    		ServerConfiguration server = new ServerConfiguration(8080);
+    		server.start();
         System.out.println( "Hello World!" );
     }
 }

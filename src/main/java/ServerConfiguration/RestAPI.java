@@ -1,4 +1,4 @@
-package TestServerSpark.TestServerSpark;
+package ServerConfiguration;
 
 import static spark.Spark.*;
 
@@ -9,8 +9,8 @@ public class RestAPI {
 	}
 
 	public void start() {
-		staticFiles.location("/public");
 		get("/ciao", (req, res) -> "BellaZio");
+		get("/hello", (req, res) -> "Hello World");
 	}
 	
 
